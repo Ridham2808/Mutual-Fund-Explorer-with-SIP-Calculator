@@ -1,103 +1,90 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  Grid,
+  Typography,
+} from "@mui/material";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <Box>
+      <Box className="animated-gradient"
+        sx={{
+          position: "relative",
+          py: { xs: 8, md: 12 },
+          color: "white",
+          overflow: "hidden",
+        }}
+      >
+        <Container>
+          <Typography variant="h2" fontWeight={700} gutterBottom>
+            Mutual Fund Explorer
+          </Typography>
+          <Typography variant="h6" sx={{ opacity: 0.9, maxWidth: 720 }} gutterBottom>
+            Discover funds, visualize NAV history, and calculate SIP returns with
+            interactive charts backed by MFAPI.in.
+          </Typography>
+          <Box sx={{ display: "flex", gap: 2, mt: 3, flexWrap: "wrap" }}>
+            <Button component={Link} href="/funds" variant="contained" color="secondary">
+              Explore Funds
+            </Button>
+            <Button component={Link} href="/scheme/118834" variant="outlined" sx={{ color: "white", borderColor: "white" }}>
+              Try a Sample Scheme
+            </Button>
+          </Box>
+        </Container>
+        <Box sx={{
+          position: "absolute", right: -120, top: -120, width: 360, height: 360,
+          bgcolor: "white", opacity: 0.08, borderRadius: "50%",
+          filter: "blur(2px)",
+        }} />
+      </Box>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Container sx={{ py: 6 }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={4}>
+            <Card variant="outlined" sx={{ transition: "transform .2s", '&:hover': { transform: 'translateY(-4px)' } }}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>Search & Browse</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Filter by scheme name and explore grouped fund houses and categories.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card variant="outlined" sx={{ transition: "transform .2s", '&:hover': { transform: 'translateY(-4px)' } }}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>Charts & Insights</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  View 1-year NAV history and calculated returns (1m, 3m, 6m, 1y).
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card variant="outlined" sx={{ transition: "transform .2s", '&:hover': { transform: 'translateY(-4px)' } }}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>SIP Calculator</Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Simulate monthly investments and see growth and annualized returns.
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+
+        <Box sx={{ display: 'flex', gap: 2, mt: 4 }}>
+          <Button component={Link} href="/funds" variant="contained">Get Started</Button>
+          <Button component={Link} href="/scheme/118834" variant="text">Quick Demo</Button>
+        </Box>
+      </Container>
+    </Box>
   );
 }

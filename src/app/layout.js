@@ -1,5 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
+import { Box, Container, Typography } from "@mui/material";
+import TopBar from "./TopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,10 +22,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Providers>
+          <TopBar />
+          <Container maxWidth="lg" sx={{ py: 3 }}>
+            {children}
+          </Container>
+          <Box component="footer" sx={{ py: 4, textAlign: 'center', color: 'text.secondary' }}>
+            <Typography variant="body2">Built with Next.js + MUI · MFAPI.in</Typography>
+          </Box>
+        </Providers>
       </body>
     </html>
   );
