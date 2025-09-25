@@ -5,6 +5,13 @@ Overview
 --------
 A modern, responsive Mutual Fund Explorer built with Next.js and MUI. It wraps MFAPI.in with custom API routes, displays rich fund data, draws interactive charts, and includes calculators for SIP and Lumpsum investments.
 
+ Live Demo
+ ---------
+ <p align="center">
+   <a href="https://mutual-fund-explorer-with-sip-calcu.vercel.app/" target="_blank"><b>Open Live App on Vercel →</b></a>
+ </p>
+
+
 Screenshots
 -----------
 
