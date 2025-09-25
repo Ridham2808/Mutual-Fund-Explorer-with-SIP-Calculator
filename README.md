@@ -9,25 +9,25 @@ Screenshots
 -----------
 
 <p align="center">
-  <img src="./photos/Home%20Page.png" alt="Home Page" width="900" />
+  <img src="Photos/Home Page.png" alt="Home Page" width="900" />
   <br/>
   <em>Home</em>
 </p>
 
 <p align="center">
-  <img src="./photos/Fund%20Search%20page.png" alt="Fund Search" width="900" />
+  <img src="Photos/Fund Search page.png" alt="Fund Search" width="900" />
   <br/>
   <em>Fund Search</em>
 </p>
 
 <p align="center">
-  <img src="./photos/Scheme%20Detail%20Page.png" alt="Scheme Detail" width="900" />
+  <img src="Photos/Scheme Detail Page.png" alt="Scheme Detail" width="900" />
   <br/>
   <em>Scheme Detail</em>
 </p>
 
 <p align="center">
-  <img src="./photos/Compare%20Schemes%20page.png" alt="Compare Schemes" width="900" />
+  <img src="Photos/Compare Schemes page.png" alt="Compare Schemes" width="900" />
   <br/>
   <em>Compare Schemes</em>
 </p>
